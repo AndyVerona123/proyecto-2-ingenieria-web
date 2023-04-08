@@ -1,107 +1,331 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  @apply box-border text-base m-0 p-0;
+  font-family: Roboto, sans-serif; /*No se puede convertir*/
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+header {
+  @apply px-0 py-[15px] bg-[#FFF159];   
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+li {
+  @apply cursor-pointer list-none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+ul {
+  @apply flex gap-[9px];
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+img {
+  @apply max-w-full;
+}
+.flex-header {
+  @apply flex justify-center gap-[90px];
+}
+.flex-header-p1 {
+  @apply flex gap-10 items-center;
+}
+.flex-header-p2 {
+  @apply flex items-end;
+ 
+}
+.gap-items-header {
+  @apply gap-[15px] flex-col flex;
+}
+
+.input-header-height {
+  @apply h-[34px];
+}
+.form-f {
+  @apply flex;
+}
+.input-header {
+  @apply border h-[39px] w-[598px] rounded-[3px] border-solid border-[white];
+}
+::placeholder {
+  @apply text-[#BFBFBF] pl-3;
+}
+.button-banner {
+  @apply shadow-[0px_0px_0px_1px_rgba(0,0,0,0.25)] cursor-pointer w-[7px] h-[7px] bg-[#B05537] rounded-[3px] border-[white];
+}
+
+.selected-button {
+  @apply bg-[white];
+}
+.categories,
+icon-category > li {
+  @apply text-[#857F42];
+}
+.icon-category {
+  @apply flex gap-1 items-center;
+}
+.icon-category > li::after {
+  @apply content-[url("/resources/icons/category.svg")] ml-[3px];
+}
+.section-1 {
+  @apply flex flex-col items-center;
+}
+.section-2 {
+  @apply bg-[#EDEDED] flex flex-col gap-10 pt-[50px] pb-[25px];
+}
+.section-3 {
+  @apply bg-[#EBEBEB] flex flex-col gap-10 py-[25px];
+}
+.cursor-p {
+  @apply cursor-pointer;
+}
+
+.button-banner-all {
+  @apply absolute w-full flex justify-center gap-[5px] bottom-3;
+}
+.position-banner {
+  @apply relative flex;
+}
+.div-section-p {
+  @apply flex justify-between bg-[white] rounded mx-[164px] my-0 p-5;
+}
+.div-section-p-2 {
+  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+}
+.flex-v-c {
+  @apply flex items-center gap-2;
+}
+.internal-flex {
+  @apply flex flex-col gap-1;
+}
+.internal-flex > a {
+  @apply text-xs;
+}
+
+.title-div {
+  @apply flex gap-4 items-end;  
+}
+.title-div > a {
+  @apply text-xs;
+}
+.title-div > div {
+  @apply text-xl text-[#666666];
+}
+.card {
+  @apply bg-[white] rounded flex flex-col gap-[3px];
+}
+.card-group {
+  @apply flex justify-between gap-[15px];
+}
+.send-free {
+  @apply text-[#00A650] font-[bolder] text-[10px];
+}
+.price-information {
+  @apply flex gap-1.5 items-center;
+}
+.card-header-space {
+  @apply mb-[42px];
+}
+.card > img {
+  @apply mb-2 px-2 py-0 border-b-[#EBEBEB] border-b border-solid;
+}
+.card > div {
+  @apply px-2 py-0;
+}
+.send-free-icon {
+  @apply flex gap-1;
+}
+.card-2-header {
+  @apply flex justify-between items-center p-[18px];
+  background: linear-gradient(90deg, #a90f90 55%, #0c1a51 100%); /*No se puede convertir*/
+}
+
+
+.div-section-p-3 {
+  @apply flex flex-col bg-[white] rounded mx-[164px] my-0;
+}
+.card-2-header > div {
+  @apply text-[white];
+}
+.card-2-title {
+  @apply text-[21px];
+}
+.card-2-prices {
+  @apply pl-2.5 border-l border-solid;
+}
+.card-2-body {
+  @apply flex flex-col gap-[15px];
+}
+.card-2-body > hr {
+  @apply border opacity-60 border-solid border-[#EBEBEB];
+}
+.card-2-body-p {
+  @apply pt-5 pb-0 px-10;
+}
+.card-2-data {
+  @apply grid grid-cols-[repeat(3,1fr)] px-10 py-0;
+}
+.card-3 {
+  @apply flex gap-2.5 items-center px-0 py-[15px];
+}
+.card-2-footer {
+  @apply flex px-10 py-[15px] justify-end; 
+}
+.main-button {
+  @apply text-[white] cursor-pointer p-2.5 rounded-[5px] border-[#3483FA] bg-[#3483fa]; 
+}
+.card-2-prices-original {
+  @apply line-through text-[13px];
+}
+.iteration {
+  @apply text-[13px];
+}
+.price-iteration {
+  @apply flex gap-[5px] items-end;
+  
+}
+.div-section-p-4 {
+  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+}
+.card-4-data {
+  @apply flex gap-[17px];
+}
+.info-card-4 {
+  @apply text-lg text-[white];
+}
+.card-4 {
+  @apply relative before:content-[''] before:absolute before:z-[1] before:inset-0;
+}
+.card-4-int {
+  @apply flex gap-4 items-center absolute z-[2] p-2.5 bottom-5;
+}
+.card-4:before {
+  background: linear-gradient(0deg, #081330 0%, rgba(8, 19, 48, 0) 100%);
+}
+.f-c-10 {
+  @apply text-[10px];
+}
+.div-section-p-5 {
+  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+}
+.info-section-5 {
+  @apply text-[#4B4B4B] bg-[white] flex flex-col gap-4 p-5;
+}
+.info-section-5 > button {
+  @apply w-[100px];
+}
+.title-section-5 {
+  @apply text-xs;
+}
+.sub-title-section-5 {
+  @apply font-[bolder] text-xl;
+}
+.image-info-section-5 {
+  @apply flex items-center bg-[white] rounded-md;
+}
+.image-info-section-5 > img {
+  @apply w-[205px];
+}
+.div-card-section-5 {
+  @apply grid gap-2.5 grid-cols-[repeat(2,1fr)];
+}
+.div-section-p-6 {
+  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+}
+.title-section-6 {
+  @apply font-[bolder] mt-[58px];
+}
+.sub-title-section-6 {
+  @apply text-xs text-[#999999] mb-[34px];
+}
+.card-5 {
+  @apply bg-[white] flex flex-col items-center gap-3.5 relative rounded-lg;
+}
+.img-card-5 {
+  @apply absolute shadow-[2px_2px_2px_1px_rgba(0,0,0,0.1)] rounded-lg top-14;
+}
+.img-int-card-5 > img {
+  @apply border rounded-lg border-solid border-[#EEEEEE];
+}
+.card-5-all {
+  @apply flex gap-3.5;
+}
+.div-section-p-7 {
+  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+}
+.card-6 {
+  @apply bg-[white] flex flex-col rounded-lg;
+}
+.supermarket-images {
+  @apply flex gap-2.5;
+}
+.supermarket-images > div > img {
+  @apply rounded-lg;
+}
+.card-6-all {
+  @apply flex justify-between gap-2;
+}
+.card-6-image-all {
+  @apply flex flex-col gap-[5px];
+}
+.card-6-info {
+  @apply flex flex-col justify-center h-full text-[#4B4B4B] p-5;
+}
+.title-section-7 {
+  @apply text-xs;
+}
+.sub-title-section-7 {
+  @apply font-[bolder] text-xl;
+}
+.title-div-section-7 {
+  @apply flex gap-1.5;
+}
+.title-div-section-7-sec-1 {
+  @apply text-xl text-[#666666];
+}
+.title-div-section-7-sec-2 {
+  @apply text-xl text-[#666666] font-[bold] flex after:content-[url("/resources/icons/category\_blue.svg")] after:ml-[3px];
+}
+.div-section-p-8 {
+  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+}
+.card-7 {
+  @apply flex bg-[white] flex-col items-center gap-2 p-1.5;
+}
+.card-7-all {
+  @apply grid grid-cols-[repeat(7,1fr)] gap-px;
+}
+.card-7 > div {
+  @apply text-center;
+}
+.footer-info-title-1 {
+  @apply font-[bold] text-[#4B4B4B];
+}
+.footer-info-title-2 {
+  @apply text-sm text-[#999999];
+}
+.card-8 {
+  @apply flex flex-col items-center text-center gap-2 p-[22px];
+}
+.card-8-af-be {
+  @apply flex flex-col items-center text-center gap-2 relative p-[22px] after:content-[''] after:h-[30%] after:w-px after:absolute after:bg-[#E2E2E2] after:right-0 after:top-[50px] before:content-[''] before:h-[30%] before:w-px before:absolute before:bg-[#E2E2E2] before:left-0 before:top-[50px];
+}
+.card-8-more-info {
+  @apply text-xs;
+}
+.card-8-all {
+  @apply grid grid-cols-[repeat(3,1fr)] px-[200px] py-[60px] border-b-[#E2E2E2] border-b border-solid;
+}
+.part-2-footer {
+  @apply mt-5 mb-[30px] mx-[164px];
+}
+.ul-footer {
+  @apply gap-5;
+}
+.ul-footer > li {
+  @apply text-sm;
+}
+.texto-info-footer {
+  @apply text-sm text-[#999999];
+}
+.waring-footer {
+  @apply flex gap-[30px] pt-[23px];
 }
