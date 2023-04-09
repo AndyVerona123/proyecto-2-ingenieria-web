@@ -4,7 +4,7 @@
 
 * {
   @apply box-border text-base m-0 p-0;
-  font-family: Roboto, sans-serif; /*No se puede convertir*/
+  font-family: Roboto, sans-serif; 
 }
 
 header {
@@ -135,7 +135,7 @@ icon-category > li {
 }
 .card-2-header {
   @apply flex justify-between items-center p-[18px];
-  background: linear-gradient(90deg, #a90f90 55%, #0c1a51 100%); /*No se puede convertir*/
+  background: linear-gradient(90deg, #a90f90 55%, #0c1a51 100%); 
 }
 
 
