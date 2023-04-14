@@ -1,4 +1,4 @@
-import link from 'next/link'
+import Link from "next/link"
 import { Layout } from '@/layouts/Layout';
 
 
@@ -25,28 +25,28 @@ const IndexPage = () => {
                             <img src="resources/icons/credit-card.svg" alt="Tarjeta de crédito" />
                             <div className="internal-flex">
                                 <div>Hasta 48 cuotas</div>
-                                <a href="#">Ver más</a>
-                            </div>
+                                <Link href="#" className="link-blue">Ver más</Link>
+                            </div> 
                         </div>
                         <div className="flex-v-c">
                             <img src="resources/icons/transfer.svg" alt="Transferencia" />
                             <div className="internal-flex">
                                 <div>Transferencia desde tu banco</div>
-                                <a href="#">Ver más</a>
+                                <Link href="#" className="link-blue">Ver más </Link>
                             </div>
                         </div>
                         <div className="flex-v-c">
                             <img src="resources/icons/payment-agreement.svg" alt="Efectivo" />
                             <div className="internal-flex">
                                 <div>Paga en efectivo</div>
-                                <a href="#">Ver más</a>
+                                <Link href="#" className="link-blue">Ver más</Link>
                             </div>
                         </div>
                         <div className="flex-v-c">
                             <img src="resources/icons/view-more.svg" alt="Ver más" />
                             <div className="internal-flex">
                                 <div>Más medios de pago</div>
-                                <a href="#">Ver más</a>
+                                <Link href="#" className="link-blue">Ver más</Link>
                             </div>
                         </div>
                     </div>
@@ -54,10 +54,9 @@ const IndexPage = () => {
                     <div className="div-section-p-2">
                         <div className="title-div">
                             <div>Ofertas</div>
-                            <a href="#">Ver todas</a>
+                            <Link href="#" className="link-blue">Ver todas</Link>
                         </div>
-                        <div className="card-group">
-                            <img src='resources/icons/Group 2.svg' />
+                        <div className="card-group">                            
                             <div className="card">
                                 <img src="resources/icons/silla.svg" alt="Silla" />
                                 <div className="price-information">
@@ -144,7 +143,7 @@ const IndexPage = () => {
                     <div className="div-section-p-4">
                         <div className="title-div">
                             <div>Beneficios de Mercado Puntos</div>
-                            <a href="#">Ver todos los beneficios</a>
+                            <Link href="#" className="link-blue">Ver todos los beneficios</Link>
                         </div>
                         <div className="card-4-data">
                             <div className="card-4">
@@ -209,7 +208,7 @@ const IndexPage = () => {
                     <div className="div-section-p-6">
                         <div className="title-div">
                             <div>Las mejores tiendas te esperan</div>
-                            <a href="#">Ver tiendas</a>
+                            <Link href="#" className="link-blue">Ver tiendas</Link>
                         </div>
                         <div className="card-5-all">
                             <div className="card-5">

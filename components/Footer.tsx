@@ -1,3 +1,4 @@
+import Link from "next/link"
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
                 <div className="footer-info-title-2">Con Mercado Pago, paga en cuotas y aprovecha la comodidad de
                     financiación que te da tu banco, o
                     hazlo con efectivo en puntos de pago. ¡Y siempre es seguro!</div>
-                <a href="#" className="card-8-more-info">Cómo pagar con Mercado Pago</a>
+                <Link href="#" className="card-8-more-info link-blue">Cómo pagar con Mercado Pago</Link>
             </div>
             <div className="card-8-af-be">
                 <img src="resources/icons/shipping.svg" alt="Shipping" />
@@ -18,7 +19,7 @@ const Footer = () => {
                 <div className="footer-info-title-2">Con solo estar registrado en Mercado Libre, tienes envíos gratis en
                     miles de productos
                     seleccionados.</div>
-                <a href="#" className="card-8-more-info">Conoce más sobre este beneficio</a>
+                <Link href="#" className="card-8-more-info link-blue">Conoce más sobre este beneficio</Link>
             </div>
             <div className="card-8">
                 <img src="resources/icons/protected.svg" alt="Protected" />
@@ -26,7 +27,7 @@ const Footer = () => {
                 <div className="footer-info-title-2">¿No te gusta? ¡Devuélvelo! En Mercado Libre, no hay nada que no
                     puedas hacer, porque estás
                     siempre protegido.</div>
-                <a href="#" className="card-8-more-info">Cómo te protegemos</a>
+                <Link href="#" className="card-8-more-info link-blue">Cómo te protegemos</Link>
             </div>
         </div>
         <div className="part-2-footer">
