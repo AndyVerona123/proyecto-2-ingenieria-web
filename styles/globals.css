@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+*{
   @apply box-border text-base m-0 p-0;
   font-family: Roboto, sans-serif; 
 }
@@ -69,8 +69,9 @@ icon-category > li {
   @apply flex flex-col items-center;
 }
 .section-2 {
-  @apply bg-[#EDEDED] flex flex-col gap-10 pt-[50px] pb-[25px];
+  @apply pt-[50px] bg-gray-200 flex flex-col gap-40 pb-[25px];
 }
+
 .section-3 {
   @apply bg-[#EBEBEB] flex flex-col gap-10 py-[25px];
 }
@@ -216,38 +217,48 @@ icon-category > li {
   @apply text-xs;
 }
 .sub-title-section-5 {
-  @apply font-[bolder] text-xl;
+  @apply font-bold text-lg;
 }
 .image-info-section-5 {
-  @apply flex items-center bg-[white] rounded-md;
+  @apply flex items-center bg-white rounded-md;
 }
 .image-info-section-5 > img {
   @apply w-[205px];
 }
 .div-card-section-5 {
-  @apply grid gap-2.5 grid-cols-[repeat(2,1fr)];
+ @apply grid grid-cols-2 gap-10;
 }
 .div-section-p-6 {
   @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
 }
 .title-section-6 {
-  @apply font-[bolder] mt-[58px];
+  @apply font-bold mt-[58px];
 }
 .sub-title-section-6 {
   @apply text-xs text-[#999999] mb-[34px];
 }
 .card-5 {
-  @apply bg-[white] flex flex-col items-center gap-3.5 relative rounded-lg;
+  @apply bg-[white] flex flex-col items-center gap-[14px] relative rounded-[8px];  
 }
+
+
 .img-card-5 {
-  @apply absolute shadow-[2px_2px_2px_1px_rgba(0,0,0,0.1)] rounded-lg top-14;
+  @apply absolute rounded-lg top-14;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
-.img-int-card-5 > img {
-  @apply border rounded-lg border-solid border-[#EEEEEE];
+
+.img-int-card-5 {
+  @apply flex;
 }
+.img-int-card-5>img {
+  @apply border border-gray-200 rounded-[1px];
+}
+
+
 .card-5-all {
-  @apply flex gap-3.5;
+  @apply flex gap-[14px];
 }
+
 .div-section-p-7 {
   @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
 }
@@ -273,7 +284,7 @@ icon-category > li {
   @apply text-xs;
 }
 .sub-title-section-7 {
-  @apply font-[bolder] text-xl;
+  @apply font-bold text-xl;
 }
 .title-div-section-7 {
   @apply flex gap-1.5;
@@ -297,7 +308,7 @@ icon-category > li {
   @apply text-center;
 }
 .footer-info-title-1 {
-  @apply font-[bold] text-[#4B4B4B];
+  @apply font-bold text-[#4B4B4B];
 }
 .footer-info-title-2 {
   @apply text-sm text-[#999999];
@@ -329,3 +340,8 @@ icon-category > li {
 .waring-footer {
   @apply flex gap-[30px] pt-[23px];
 }
+
+.link-blue{
+  @apply text-blue-500 hover:text-blue-700 visited:text-blue-700;
+}
+
