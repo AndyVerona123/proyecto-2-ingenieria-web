@@ -393,8 +393,14 @@ icon-category > li {
 .footer-info-title-1 {
   @apply font-[bold] text-[#4B4B4B];
 }
+.default-font-style {
+  @apply text-[50px] lg:text-xs leading-[70px] lg:leading-none;
+}
 .footer-info-title-2 {
-  @apply text-sm text-[#999999];
+  @apply lg:text-sm text-[#999999] text-[50px];
+}
+.default-image-configuration-footer {
+  @apply w-[150px] lg:w-auto;
 }
 .card-8 {
   @apply flex flex-col items-center text-center gap-2 p-[22px];
@@ -412,13 +418,13 @@ icon-category > li {
   @apply mt-5 mb-[30px] mx-[164px];
 }
 .ul-footer {
-  @apply gap-5;
+  @apply lg:gap-5;
 }
 .ul-footer > li {
-  @apply text-sm;
+  @apply lg:text-sm;
 }
 .texto-info-footer {
-  @apply text-sm text-[#999999];
+  @apply lg:text-sm text-[#999999];
 }
 .waring-footer {
   @apply flex gap-[30px] pt-[23px];
