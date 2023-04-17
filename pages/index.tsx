@@ -1,4 +1,4 @@
-import link from 'next/link'
+import Link from "next/link"
 import { Layout } from '@/layouts/Layout';
 
 
@@ -210,7 +210,7 @@ const IndexPage = () => {
                     <div className="div-section-p-6">
                         <div className="title-div">
                             <div>Las mejores tiendas te esperan</div>
-                            <a href="#">Ver tiendas</a>
+                            <Link href="#" className="link-blue">Ver tiendas</Link>
                         </div>
                         <div className="card-5-all">
                             <div className="card-5">
