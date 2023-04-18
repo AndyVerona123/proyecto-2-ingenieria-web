@@ -444,3 +444,83 @@ icon-category > li {
 .link-blue{
   @apply text-blue-500 hover:text-blue-700 visited:text-blue-700;
 }
+
+#carrusel {
+  @apply overflow-hidden h-[250px] relative;
+}
+#carrusel .left-arrow {
+  @apply absolute z-[1] mt-[-9px] top-[33%];
+}
+#carrusel .right-arrow {
+  @apply absolute z-[1] mt-[-9px] -right-11 top-[33%];
+}
+.carrusel {
+  @apply h-full absolute z-0;
+}
+.carrusel > div {
+  @apply float-left h-full w-[184px];
+}
+.carrusel img {
+  @apply cursor-pointer;
+}
+.left-arrow > img {
+  @apply w-3/5;
+}
+.right-arrow > img {
+  @apply w-3/5;
+}
+.card-shopping-cart {
+  @apply absolute shadow-[0_4px_8px_0_rgba(0,0,0,0.2),0_6px_20px_0_rgba(0,0,0,0.19)] z-[1] text-[10px] leading-normal rounded-md right-[75px] top-[94px];
+  background: white;
+}
+.card-scroll {
+  @apply w-[300px] max-h-[300px] overflow-hidden overflow-y-scroll;
+}
+
+/* Inicio código para mejorar apariencia de Scroll: https://www.campusmvp.es/recursos/post/como-personalizar-los-estilos-css-de-las-barras-de-scroll.aspx */
+.card-scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.card-scroll::-webkit-scrollbar:vertical {
+  @apply w-2.5;
+}
+.card-scroll::-webkit-scrollbar-button:increment,
+.card-scroll::-webkit-scrollbar-button {
+  @apply hidden;
+}
+.card-scroll::-webkit-scrollbar:horizontal {
+  @apply h-2.5;
+}
+.card-scroll::-webkit-scrollbar-thumb {
+  @apply bg-[#797979] rounded-[20px] border-2 border-solid border-[#f1f2f3];
+}
+.card-scroll::-webkit-scrollbar-track {
+  @apply rounded-[10px];
+}
+
+/* Fin código para mejorar apariencia de Scroll*/
+hr {
+  @apply my-0 border-t-[rgba(0,0,0,0.1)] border-0 border-t border-solid;
+}
+.item-card {
+  @apply items-center flex gap-2 justify-between p-1.5;
+}
+.title-card-shopping-cart {
+  @apply font-bold p-3;
+}
+.title-card-shopping-footer {
+  @apply font-bold p-3;
+}
+.item-card > img {
+  @apply w-[30%] rounded-[50%] border-2 border-solid border-[rgba(0,0,0,0.1)];
+}
+.count-items {
+  @apply absolute text-[white] top-[-3px] font-[bold] text-[13px] left-[13px];
+}
+.position-count-items {
+  @apply relative cursor-pointer ml-2.5;
+}
+
+.icon-delete {
+  @apply cursor-pointer;
+}

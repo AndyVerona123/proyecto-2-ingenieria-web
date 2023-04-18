@@ -1,113 +1,205 @@
 import Link from "next/link"
 import { Layout } from '@/layouts/Layout';
-
+import { ContextHeader } from "@/context/contextHeader";
+import { useState } from "react";
+import { ItemCard } from "@/Objects/itemCard";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const IndexPage = () => {
-    return (
-        <Layout>
-            <>
-                <section className="section-1">
-                    <div className="position-banner">
-                        <img className="img1-property-mobile" src="resources/icons/banner.svg" alt="Banner" />
-                        <div className="button-banner-all">
-                            <button className="button-banner"></button>
-                            <button className="button-banner selected-button"></button>
-                            <button className="button-banner"></button>
-                            <button className="button-banner"></button>
-                            <button className="button-banner"></button>
-                            <button className="button-banner"></button>
-                        </div>
-                    </div>
-                </section>
-                <section className="section-2">
-                    <div className="div-section-p">
-                        <div className="flex-v-c">
-                            <img className="settings-mobile-img-section-2" src="resources/icons/credit-card.svg" alt="Tarjeta de crédito" />
-                            <div className="internal-flex">
-                                <div className="settings-mobile-section2">Hasta 48 cuotas</div>
-                                <a className="settings-mobile-section2" href="#">Ver más</a>
-                            </div>
-                        </div>
-                        <div className="flex-v-c">
-                            <img className="settings-mobile-img-section-2" src="resources/icons/transfer.svg" alt="Transferencia" />
-                            <div className="internal-flex">
-                                <div className="settings-mobile-section2">Transferencia desde tu banco</div>
-                                <a className="settings-mobile-section2" href="#">Ver más</a>
-                            </div>
-                        </div>
-                        <div className="flex-v-c">
-                            <img className="settings-mobile-img-section-2" src="resources/icons/payment-agreement.svg" alt="Efectivo" />
-                            <div className="internal-flex">
-                                <div className="settings-mobile-section2">Paga en efectivo</div>
-                                <a className="settings-mobile-section2" href="#">Ver más</a>
-                            </div>
-                        </div>
-                        <div className="flex-v-c">
-                            <img className="settings-mobile-img-section-2" src="resources/icons/view-more.svg" alt="Ver más" />
-                            <div className="internal-flex">
-                                <div className="settings-mobile-section2">Más medios de pago</div>
-                                <a className="settings-mobile-section2" href="#">Ver más</a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className="div-section-p-2">
-                        <div className="title-div">
-                            <div className="title-div-style">Ofertas</div>
-                            <a href="#">Ver todas</a>
+    const data: ItemCard[] = [
+        {
+            id: 1,
+            image: 'resources/icons/silla.svg',
+            price: 210900,
+            discount: 32,
+            isFreeShipping: true,
+            isFull: false,
+            quantity: 1
+        },
+        {
+            id: 2,
+            image: 'resources/icons/microfono.svg',
+            price: 74990,
+            discount: 25,
+            isFreeShipping: true,
+            isFull: true,
+            quantity: 1
+        },
+        {
+            id: 3,
+            image: 'resources/icons/afeitadora.svg',
+            price: 134950,
+            discount: 50,
+            isFreeShipping: true,
+            isFull: false,
+            quantity: 1
+        },
+        {
+            id: 4,
+            image: 'resources/icons/armario.svg',
+            price: 149900,
+            discount: 30,
+            isFreeShipping: true,
+            isFull: false,
+            quantity: 1
+        },
+        {
+            id: 5,
+            image: 'resources/icons/cortina.svg',
+            price: 69990,
+            discount: 17,
+            isFreeShipping: false,
+            isFull: true,
+            quantity: 1
+        },
+        {
+            id: 6,
+            image: 'resources/icons/celular.webp',
+            price: 69990,
+            discount: 20,
+            isFreeShipping: false,
+            isFull: true,
+            quantity: 1
+        },
+        {
+            id: 7,
+            image: 'resources/icons/silla.webp',
+            price: 250990,
+            discount: 17,
+            isFreeShipping: false,
+            isFull: true,
+            quantity: 1
+        },
+        {
+            id: 8,
+            image: 'resources/icons/tapete.webp',
+            price: 99990,
+            discount: 5,
+            isFreeShipping: false,
+            isFull: true,
+            quantity: 1
+        },
+        {
+            id: 9,
+            image: 'resources/icons/silla_2.webp',
+            price: 450000,
+            discount: 18,
+            isFreeShipping: false,
+            isFull: true,
+            quantity: 1
+        },
+        {
+            id: 10,
+            image: 'resources/icons/televisor.webp',
+            price: 1500000,
+            discount: 25,
+            isFreeShipping: false,
+            isFull: true,
+            quantity: 1
+        }
+    ]
+
+    const [itemCard, setItemCard] = useState<ItemCard[]>([]);
+
+    const addItemToCart = (item: ItemCard) => {
+        const objectFilter = itemCard.find(i => i.id === item.id);
+        if (objectFilter !== null && objectFilter !== undefined) {
+            itemCard.filter(i => i.id === item.id)[0].quantity = objectFilter.quantity + 1;
+            notify('Se agregó un nuevo artículo existente');
+        } else {
+            setItemCard((prev) => [...prev, item]);
+            notify('Se agregó un nuevo artículo.');
+        }
+        setTotalItems(totalItems + 1);
+    }
+
+    const [totalItems, setTotalItems] = useState<number>(0);
+
+    const notify = (message: string) => {
+        toast.success(message);
+    }
+
+    return (
+        <ContextHeader.Provider value={{ setTotalItems, totalItems, itemCard, setItemCard }}>
+            <Layout>
+                <>
+                    <section className="section-1">
+                        <div className="position-banner">
+                            <img className="img1-property-mobile" src="resources/icons/banner.svg" alt="Banner" />
+                            <div className="button-banner-all">
+                                <button className="button-banner"></button>
+                                <button className="button-banner selected-button"></button>
+                                <button className="button-banner"></button>
+                                <button className="button-banner"></button>
+                                <button className="button-banner"></button>
+                                <button className="button-banner"></button>
+                            </div>
                         </div>
-                        <div className="card-group">
-                            <img className="alone-img-style" src='resources/icons/Group 2.svg' />
-                            <div className="card">
-                                <img src="resources/icons/silla.svg" alt="Silla" />
-                                <div className="price-information">
-                                    <div className="settings-mobile-section3">$210.900</div>
-                                    <div className="send-free">32% OFF</div>
-                                </div>
-                                <div className="send-free card-header-space">Envío gratis</div>
-                            </div>
-                            <div className="card">
-                                <img src="resources/icons/microfono.svg" alt="Micrófono" />
-                                <div className="price-information price-information-full">
-                                    <div className="settings-mobile-section3">$74.990</div>
-                                    <div className="send-free">25% OFF</div>
-                                </div>
-                                <div className="card-header-space">
-                                    <div className="send-free-icon">
-                                        <div className="send-free">Envío gratis</div>
-                                        <img className="full-style" src="resources/icons/full.svg" alt="Full" />
-                                    </div>
+                    </section>
+                    <section className="section-2">
+                        <div className="div-section-p">
+                            <div className="flex-v-c">
+                                <img className="settings-mobile-img-section-2" src="resources/icons/credit-card.svg" alt="Tarjeta de crédito" />
+                                <div className="internal-flex">
+                                    <div className="settings-mobile-section2">Hasta 48 cuotas</div>
+                                    <Link className="settings-mobile-section2 link-blue" href="#">Ver más</Link>
                                 </div>
                             </div>
-                            <div className="card">
-                                <img src="resources/icons/afeitadora.svg" alt="Afeitadora" />
-                                <div className="price-information">
-                                    <div className="settings-mobile-section3">$134.950</div>
-                                    <div className="send-free">50% OFF</div>
+                            <div className="flex-v-c">
+                                <img  className="settings-mobile-img-section-2"src="resources/icons/transfer.svg" alt="Transferencia" />
+                                <div className="internal-flex">
+                                    <div className="settings-mobile-section2">Transferencia desde tu banco</div>
+                                    <Link className="settings-mobile-section2 link-blue" href="#">Ver más </Link>
                                 </div>
-                                <div className="send-free ">Envío gratis</div>
                             </div>
-                            <div className="card">
-                                <img src="resources/icons/armario.svg" alt="Armario" />
-                                <div className="price-information">
-                                    <div className="settings-mobile-section3">$149.900</div>
-                                    <div className="send-free">30% OFF</div>
+                            <div className="flex-v-c">
+                                <img className="settings-mobile-img-section-2" src="resources/icons/payment-agreement.svg" alt="Efectivo" />
+                                <div className="internal-flex">
+                                    <div className="settings-mobile-section2">Paga en efectivo</div>
+                                    <Link className="settings-mobile-section2 link-blue" href="#">Ver más</Link>
                                 </div>
-                                <div className="send-free ">Envío gratis</div>
                             </div>
-                            <div className="card">
-                                <img src="resources/icons/cortina.svg" alt="Cortina" />
-                                <div className="price-information price-information-full">
-                                    <div className="settings-mobile-section3">$69.990</div>
-                                    <div className="send-free">17% OFF</div>
-                                </div>
-                                <div>
-                                    <img className="full-style" src="resources/icons/full.svg" alt="Full" />
+                            <div className="flex-v-c">
+                                <img className="settings-mobile-img-section-2" src="resources/icons/view-more.svg" alt="Ver más" />
+                                <div className="internal-flex">
+                                    <div className="settings-mobile-section2">Más medios de pago</div>
+                                    <Link className="settings-mobile-section2 link-blue" href="#">Ver más</Link>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="div-section-p-3">
+
+                        <div className="div-section-p-2">
+                            <div className="title-div">
+                                <div className="title-div-style">Ofertas</div>
+                                <a href="#">Ver todas</a>
+                            </div>
+                            <div className="" id="carrusel">
+                                <a href="#" className="left-arrow"><img src="resources/icons/left.svg" /></a>
+                                <a href="#" className="right-arrow"><img src="resources/icons/right.svg" /></a>
+                                <div className="carrusel card-group">
+                                    {data.map((item, index) => {
+                                        return (
+                                            <div className="card" id={`product_${index}`} key={index} onClick={() => addItemToCart(item)}>
+                                                <img className="alone-img-style" src={item.image} />
+                                                <div className="price-information price-information-full">
+                                                    <div className="settings-mobile-section3">${item.price.toLocaleString()}</div>
+                                                    <div className="send-free">{item.discount}% OFF</div>
+                                                </div>
+                                                <div className="card-header-space">
+                                                    <div className="send-free-icon">
+                                                        {item.isFreeShipping && <div className="send-free">Envío gratis</div>}
+                                                        {item.isFull && <img className="full-style" src="resources/icons/full.svg" alt="Full" />}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="div-section-p-3">
                         <div className="card-2-header">
                             <div className="card-2-title">Suscríbete al nivel 6</div>
                             <div className="card-2-prices">
@@ -261,53 +353,53 @@ const IndexPage = () => {
                     </div>
                 </section>
 
-                <section className="section-3">
+                    <section className="section-3">
 
-                    <div className="div-section-p-7">
-                        <div className="title-div-section-7">
-                            <div className="title-div-section-7-sec-1">Colecciones:</div>
-                            <div className="title-div-section-7-sec-2">Supermercado</div>
-                        </div>
-                        <div className="card-6-all">
-                            <div className="card-6">
-                                <img src="resources/icons/supermercado.svg" alt="Supermercado" />
-                                <div className="card-6-info">
-                                    <div className="title-section-7">DESCUBRE</div>
-                                    <div className="sub-title-section-7">SUPERMERCADO</div>
+                        <div className="div-section-p-7">
+                            <div className="title-div-section-7">
+                                <div className="title-div-section-7-sec-1">Colecciones:</div>
+                                <div className="title-div-section-7-sec-2">Supermercado</div>
+                            </div>
+                            <div className="card-6-all">
+                                <div className="card-6">
+                                    <img src="resources/icons/supermercado.svg" alt="Supermercado" />
+                                    <div className="card-6-info">
+                                        <div className="title-section-7">DESCUBRE</div>
+                                        <div className="sub-title-section-7">SUPERMERCADO</div>
+                                    </div>
+                                </div>
+                                <div className="card-6-image-all">
+                                    <div className="supermarket-images">
+                                        <div>
+                                            <img src="resources/icons/supermercado_img_1.svg" alt="Supermrecado imagen 1" />
+                                        </div>
+                                        <div>
+                                            <img src="resources/icons/supermercado_img_2.svg" alt="Supermrecado imagen 2" />
+                                        </div>
+                                        <div>
+                                            <img src="resources/icons/supermercado_img_3.svg" alt="Supermrecado imagen 3" />
+                                        </div>
+                                        <div>
+                                            <img src="resources/icons/supermercado_img_4.svg" alt="Supermrecado imagen 4" />
+                                        </div>
+                                    </div>
+                                    <div className="supermarket-images">
+                                        <div>
+                                            <img src="resources/icons/supermercado_img_5.svg" alt="Supermrecado imagen 5" />
+                                        </div>
+                                        <div>
+                                            <img src="resources/icons/supermercado_img_6.svg" alt="Supermrecado imagen 6" />
+                                        </div>
+                                        <div>
+                                            <img src="resources/icons/supermercado_img_7.svg" alt="Supermrecado imagen 7" />
+                                        </div>
+                                        <div>
+                                            <img src="resources/icons/supermercado_img_8.svg" alt="Supermrecado imagen 8" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="card-6-image-all">
-                                <div className="supermarket-images">
-                                    <div>
-                                        <img src="resources/icons/supermercado_img_1.svg" alt="Supermrecado imagen 1" />
-                                    </div>
-                                    <div>
-                                        <img src="resources/icons/supermercado_img_2.svg" alt="Supermrecado imagen 2" />
-                                    </div>
-                                    <div>
-                                        <img src="resources/icons/supermercado_img_3.svg" alt="Supermrecado imagen 3" />
-                                    </div>
-                                    <div>
-                                        <img src="resources/icons/supermercado_img_4.svg" alt="Supermrecado imagen 4" />
-                                    </div>
-                                </div>
-                                <div className="supermarket-images">
-                                    <div>
-                                        <img src="resources/icons/supermercado_img_5.svg" alt="Supermrecado imagen 5" />
-                                    </div>
-                                    <div>
-                                        <img src="resources/icons/supermercado_img_6.svg" alt="Supermrecado imagen 6" />
-                                    </div>
-                                    <div>
-                                        <img src="resources/icons/supermercado_img_7.svg" alt="Supermrecado imagen 7" />
-                                    </div>
-                                    <div>
-                                        <img src="resources/icons/supermercado_img_8.svg" alt="Supermrecado imagen 8" />
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                    </div>
 
                     <div className="div-section-p-8">
                         <div className="title-div">
@@ -376,7 +468,8 @@ const IndexPage = () => {
                     </div>
                 </section>
             </>
-        </Layout>
+            </Layout>
+        </ContextHeader.Provider>
 
     )
 };
