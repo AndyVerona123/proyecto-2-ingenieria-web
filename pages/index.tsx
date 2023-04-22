@@ -175,14 +175,14 @@ const IndexPage = () => {
                                 <div className="title-div-style">Ofertas</div>
                                 <a href="#">Ver todas</a>
                             </div>
-                            <div className="" id="carrusel">
+                            <div className="general-container-section-2-styles" id="carrusel">
                                 <a href="#" className="left-arrow"><img src="resources/icons/left.svg" /></a>
                                 <a href="#" className="right-arrow"><img src="resources/icons/right.svg" /></a>
                                 <div className="carrusel card-group">
                                     {data.map((item, index) => {
                                         return (
                                             <div className="card" id={`product_${index}`} key={index} onClick={() => addItemToCart(item)}>
-                                                <img className="alone-img-style" src={item.image} />
+                                                <img  src={item.image} />
                                                 <div className="price-information price-information-full">
                                                     <div className="settings-mobile-section3">${item.price.toLocaleString()}</div>
                                                     <div className="send-free">{item.discount}% OFF</div>

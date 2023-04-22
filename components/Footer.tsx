@@ -42,8 +42,8 @@ const Footer = () => {
             <div className="texto-info-footer default-font-style">Copyright © 1999-2023 MercadoLibre Colombia LTDA.</div>
             <div className="texto-info-footer default-font-style">Carrera 17 Numero 93 - 09 Piso 3, Bogotá D.C., Colombia</div>
             <div className="waring-footer">
-                <img className="default-image-configuration-footer" src="resources/icons/industria_comercio.svg" alt="Industria y comercio" />
-                <img className="default-image-configuration-footer" src="resources/icons/pare_compre.svg" alt="Pare y compre" />
+                <img className="image-configuration-footer" src="resources/icons/industria_comercio.svg" alt="Industria y comercio" />
+                <img className="image-configuration-footer" src="resources/icons/pare_compre.svg" alt="Pare y compre" />
             </div>
         </div>
     </div>
