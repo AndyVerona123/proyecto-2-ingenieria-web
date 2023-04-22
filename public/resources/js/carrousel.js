@@ -3,14 +3,14 @@ var imagenes = new Array();
  
 $(document).ready(function() {
     var numImages = 10;
-    if (numImages <= 5) {
+    if (numImages <= 1) {
         $('.right-arrow').css('display', 'none');
         $('.left-arrow').css('display', 'none');
     }
  
     $('.left-arrow').on('click',function() {
         if (current > 0) {
-            current = current - 5;
+            current = current - 1;
         } else {
             return false;
         }
@@ -33,8 +33,8 @@ $(document).ready(function() {
     });
  
     $('.right-arrow').on('click', function() {
-        if (numImages > current + 5) {
-            current = current + 5;
+        if (numImages > current + 1) {
+            current = current + 1;
         } else {
             return false;
         }
