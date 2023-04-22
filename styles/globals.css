@@ -39,7 +39,6 @@ img {
 
 .flex-header-p2 {
   @apply hidden lg:flex lg:items-end lg:mb-[15px];
- 
 }
 .flex-header-p2-car {
   @apply lg:w-[78px] lg:h-[80px] lg:mt-[69px] lg:mr-[233px] lg:hidden;
@@ -104,7 +103,7 @@ icon-category > li {
   @apply flex flex-col items-center;
 }
 .section-2 {
-  @apply pt-[50px] bg-gray-200 flex flex-col gap-40 pb-[25px];
+  @apply pt-[50px] bg-gray-200 flex flex-col gap-10 pb-[25px];
 }
 
 .section-3 {
@@ -127,7 +126,7 @@ icon-category > li {
   @apply flex justify-between bg-[white] rounded mx-[164px] my-0 p-5 flex-col lg:flex-row;
 }
 .div-section-p-2 {
-  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+  @apply flex flex-col gap-[15px] mx-[164px] my-0;
 }
 .flex-v-c {
   @apply flex items-center gap-2 h-[349px] lg:h-1/2;
@@ -272,7 +271,7 @@ icon-category > li {
   
 }
 .div-section-p-4 {
-  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+  @apply flex flex-col gap-[15px] mx-[164px] my-0;
 }
 .card-4-data {
   @apply flex gap-[17px] flex-col lg:flex-row;
@@ -299,7 +298,7 @@ icon-category > li {
   @apply lg:text-[10px] text-[70px];
 }
 .div-section-p-5 {
-  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+  @apply flex flex-col gap-[15px] mx-[164px] my-0;
 }
 .info-section-5 {
   @apply text-[#4B4B4B] bg-[white] flex flex-col gap-4 p-5;
@@ -323,7 +322,7 @@ icon-category > li {
   @apply lg:grid gap-2.5 lg:grid-cols-[repeat(2,1fr)] flex-col lg:flex-row;
 }
 .div-section-p-6 {
-  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+  @apply flex flex-col gap-[15px] mx-[164px] my-0;
 }
 .title-section-6 {
   @apply font-bold mt-[58px];
@@ -483,7 +482,7 @@ icon-category > li {
   background: white;
 }
 .card-scroll {
-  @apply lg:w-[300px] lg:max-h-[300px] overflow-hidden overflow-y-scroll w-[1000px];
+  @apply lg:w-[300px] max-h-[766px] lg:max-h-[300px] overflow-hidden overflow-y-scroll w-[1000px];
 }
 .card-notification-size {
   @apply lg:w-auto w-[400px]
@@ -525,7 +524,7 @@ hr {
   @apply font-bold lg:p-3 text-[70px] lg:text-[16px] p-10;
 }
 .icon-delete-styles {
-  @apply text-[114px] lg:text-xs;
+  @apply text-[82px] lg:text-[20px];
 }
 .title-card-shopping-footer {
   @apply font-bold lg:p-3 text-[70px] lg:text-[16px] p-10;
@@ -534,7 +533,7 @@ hr {
   @apply lg:w-[30%] rounded-[50%] border-2 border-solid border-[rgba(0,0,0,0.1)];
 }
 .count-items {
-  @apply absolute text-[white] top-[-3px] font-[bold] text-[13px] left-[13px];
+  @apply absolute text-[white] top-[18px] lg:top-[-3px] font-[bold] text-[45px] lg:text-[13px] left-[29px] lg:left-[13px];
 }
 .position-count-items {
   @apply relative cursor-pointer ml-2.5;

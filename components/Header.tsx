@@ -36,7 +36,7 @@ const Header = () => {
                         <HeaderDesktop/>
                         <div className="flex-header-p2-car">
                             <div className="position-count-items" onClick={changesModal}>
-                                <img className="icon-car-mobile" src="resources/icons/cart-shopping-solid 1.svg"/>
+                                <img className="icon-car-mobile" src="resources/icons/cart.svg"/>
                                 <div className="count-items">{totalItems}</div>
                             </div>
                         </div>
