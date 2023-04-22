@@ -12,7 +12,7 @@ html {
 }
 
 header {
-  @apply px-0 py-[70px] lg:py-[15px] bg-[#FFF159];
+  @apply px-0 py-[70px] lg:py-[5px] bg-[#FFF159];
 }
 
 li {
@@ -30,7 +30,7 @@ img {
   @apply flex justify-center lg:gap-[90px];
 }
 .flex-header-p1 {
-  @apply flex h-[150px] pb-[50px] lg:pb-0 lg:h-1/2 lg:gap-10 items-center ml-[85px] lg:ml-0;
+  @apply flex h-[150px] pb-[50px] lg:pb-0 lg:h-1/2 lg:gap-10 items-center ml-[85px] lg:ml-0 lg:mt-[25px];
 }
 
 .flex-header-p1-mobile {
@@ -38,8 +38,13 @@ img {
 }
 
 .flex-header-p2 {
-  @apply hidden lg:flex lg:items-end;
- 
+  @apply hidden lg:flex lg:items-end lg:mb-[15px];
+}
+.flex-header-p2-car {
+  @apply lg:w-[78px] lg:h-[80px] lg:mt-[69px] lg:mr-[233px] lg:hidden;
+}
+.flex-header-1 {
+  @apply flex lg:flex-col;
 }
 .general-configuration-mobile {
   @apply hidden;
@@ -58,11 +63,11 @@ img {
 }
 
 .nav-bar-mobile {
-  @apply lg:hidden mr-[20px] w-[143px] h-[156px] mt-[76px] ml-10;
+  @apply lg:hidden mr-[20px] h-[156px] mt-[76px] ml-[50px] lg:ml-0;
 }
 
 .icon-car-mobile {
-  @apply lg:hidden w-[78px] h-[80px] mt-[69px] mr-[233px];
+  @apply lg:hidden w-[78px] h-[80px] mt-[46px];
 }
 
 .input-header-height {
@@ -98,7 +103,7 @@ icon-category > li {
   @apply flex flex-col items-center;
 }
 .section-2 {
-  @apply pt-[50px] bg-gray-200 flex flex-col gap-40 pb-[25px];
+  @apply pt-[50px] bg-gray-200 flex flex-col gap-10 pb-[25px];
 }
 
 .section-3 {
@@ -121,7 +126,7 @@ icon-category > li {
   @apply flex justify-between bg-[white] rounded mx-[164px] my-0 p-5 flex-col lg:flex-row;
 }
 .div-section-p-2 {
-  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+  @apply flex flex-col gap-[15px] mx-[164px] my-0;
 }
 .flex-v-c {
   @apply flex items-center gap-2 h-[349px] lg:h-1/2;
@@ -266,7 +271,7 @@ icon-category > li {
   
 }
 .div-section-p-4 {
-  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+  @apply flex flex-col gap-[15px] mx-[164px] my-0;
 }
 .card-4-data {
   @apply flex gap-[17px] flex-col lg:flex-row;
@@ -293,7 +298,7 @@ icon-category > li {
   @apply lg:text-[10px] text-[70px];
 }
 .div-section-p-5 {
-  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+  @apply flex flex-col gap-[15px] mx-[164px] my-0;
 }
 .info-section-5 {
   @apply text-[#4B4B4B] bg-[white] flex flex-col gap-4 p-5;
@@ -317,7 +322,7 @@ icon-category > li {
   @apply lg:grid gap-2.5 lg:grid-cols-[repeat(2,1fr)] flex-col lg:flex-row;
 }
 .div-section-p-6 {
-  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+  @apply flex flex-col gap-[15px] mx-[164px] my-0;
 }
 .title-section-6 {
   @apply font-bold mt-[58px];
@@ -402,7 +407,7 @@ icon-category > li {
   @apply font-bold text-[#4B4B4B];
 }
 .default-font-style {
-  @apply text-[50px] lg:text-xs leading-[70px] lg:leading-none;
+  @apply text-[36px] lg:text-xs leading-[70px] lg:leading-none;
 }
 .footer-info-title-2 {
   @apply lg:text-sm text-[#999999] text-[50px];
@@ -473,11 +478,14 @@ icon-category > li {
   @apply lg:w-3/5 w-[250px];
 }
 .card-shopping-cart {
-  @apply absolute shadow-[0_4px_8px_0_rgba(0,0,0,0.2),0_6px_20px_0_rgba(0,0,0,0.19)] z-[1] text-[10px] leading-normal rounded-md right-[75px] top-[94px];
+  @apply absolute shadow-[0_4px_8px_0_rgba(0,0,0,0.2),0_6px_20px_0_rgba(0,0,0,0.19)] z-[1] text-[10px] leading-normal rounded-md lg:right-[75px] lg:top-[94px] lg:w-auto top-[293px] w-[1000px];
   background: white;
 }
 .card-scroll {
-  @apply w-[300px] max-h-[300px] overflow-hidden overflow-y-scroll;
+  @apply lg:w-[300px] max-h-[766px] lg:max-h-[300px] overflow-hidden overflow-y-scroll w-[1000px];
+}
+.card-notification-size {
+  @apply lg:w-auto w-[400px]
 }
 
 /* Inicio código para mejorar apariencia de Scroll: https://www.campusmvp.es/recursos/post/como-personalizar-los-estilos-css-de-las-barras-de-scroll.aspx */
@@ -509,16 +517,23 @@ hr {
   @apply items-center flex gap-2 justify-between p-1.5;
 }
 .title-card-shopping-cart {
-  @apply font-bold p-3;
+  @apply font-bold lg:p-3 text-[70px] lg:text-[16px] p-10;
+}
+
+.title-card-shopping-cart-mobile {
+  @apply font-bold lg:p-3 text-[70px] lg:text-[16px] p-10;
+}
+.icon-delete-styles {
+  @apply text-[82px] lg:text-[20px];
 }
 .title-card-shopping-footer {
-  @apply font-bold p-3;
+  @apply font-bold lg:p-3 text-[70px] lg:text-[16px] p-10;
 }
 .item-card > img {
   @apply lg:w-[30%] rounded-[50%] border-2 border-solid border-[rgba(0,0,0,0.1)];
 }
 .count-items {
-  @apply absolute text-[white] top-[-3px] font-[bold] text-[13px] left-[13px];
+  @apply absolute text-[white] top-[18px] lg:top-[-3px] font-[bold] text-[45px] lg:text-[13px] left-[29px] lg:left-[13px];
 }
 .position-count-items {
   @apply relative cursor-pointer ml-2.5;

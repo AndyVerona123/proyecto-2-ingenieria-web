@@ -26,8 +26,7 @@ const HeaderDesktop = () => {
                     <li>Ayuda / PQR</li>
                 </ul>
             </div>
-            <img className="nav-bar-mobile" src="resources/icons/nav_ico.png"/>
-            <img className="icon-car-mobile" src="resources/icons/cart-shopping-solid 1.svg"/>
+            
         </div>
     )
 }
