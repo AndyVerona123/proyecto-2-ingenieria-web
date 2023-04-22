@@ -2,13 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+*{
   @apply box-border text-base m-0 p-0;
   font-family: Roboto, sans-serif; 
 }
 
+html {
+  @apply w-[399vw] lg:w-full
+}
+
 header {
-  @apply px-0 py-[15px] bg-[#FFF159];   
+  @apply px-0 py-[70px] lg:py-[15px] bg-[#FFF159];
 }
 
 li {
@@ -23,27 +27,52 @@ img {
   @apply max-w-full;
 }
 .flex-header {
-  @apply flex justify-center gap-[90px];
+  @apply flex justify-center lg:gap-[90px];
 }
 .flex-header-p1 {
+  @apply flex h-[150px] pb-[50px] lg:pb-0 lg:h-1/2 lg:gap-10 items-center ml-[85px] lg:ml-0;
+}
+
+.flex-header-p1-mobile {
   @apply flex gap-10 items-center;
 }
+
 .flex-header-p2 {
-  @apply flex items-end;
+  @apply hidden lg:flex lg:items-end;
  
 }
+.general-configuration-mobile {
+  @apply hidden;
+}
+
 .gap-items-header {
+  @apply hidden lg:gap-[15px] lg:flex-col lg:flex;
+}
+
+.gap-items-header-input {
   @apply gap-[15px] flex-col flex;
 }
 
+.gap-items-header-mobile {
+  @apply lg:hidden mr-[20px] h-[156px] mt-[119px];
+}
+
+.nav-bar-mobile {
+  @apply lg:hidden mr-[20px] w-[143px] h-[156px] mt-[76px] ml-10;
+}
+
+.icon-car-mobile {
+  @apply lg:hidden w-[78px] h-[80px] mt-[69px] mr-[233px];
+}
+
 .input-header-height {
-  @apply h-[34px];
+  @apply h-[45px];
 }
 .form-f {
   @apply flex;
 }
 .input-header {
-  @apply border h-[39px] w-[598px] rounded-[3px] border-solid border-[white];
+  @apply border h-[131px] w-[200vw] lg:h-[39px] lg:w-[598px] rounded-[3px] border-solid border-[white] text-[72px] lg:text-[14px];
 }
 ::placeholder {
   @apply text-[#BFBFBF] pl-3;
@@ -57,7 +86,7 @@ img {
 }
 .categories,
 icon-category > li {
-  @apply text-[#857F42];
+  @apply hidden lg:text-[#857F42];
 }
 .icon-category {
   @apply flex gap-1 items-center;
@@ -69,8 +98,9 @@ icon-category > li {
   @apply flex flex-col items-center;
 }
 .section-2 {
-  @apply bg-[#EDEDED] flex flex-col gap-10 pt-[50px] pb-[25px];
+  @apply pt-[50px] bg-gray-200 flex flex-col gap-40 pb-[25px];
 }
+
 .section-3 {
   @apply bg-[#EBEBEB] flex flex-col gap-10 py-[25px];
 }
@@ -84,30 +114,49 @@ icon-category > li {
 .position-banner {
   @apply relative flex;
 }
+.img1-property-mobile {
+  @apply w-[3000px] lg:w-full;
+}
 .div-section-p {
-  @apply flex justify-between bg-[white] rounded mx-[164px] my-0 p-5;
+  @apply flex justify-between bg-[white] rounded mx-[164px] my-0 p-5 flex-col lg:flex-row;
 }
 .div-section-p-2 {
   @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
 }
 .flex-v-c {
-  @apply flex items-center gap-2;
+  @apply flex items-center gap-2 h-[349px] lg:h-1/2;
+}
+.settings-mobile-img-section-2 {
+  @apply w-[261px] lg:w-auto pt-10 lg:pt-0;
 }
 .internal-flex {
-  @apply flex flex-col gap-1;
+  @apply flex flex-col gap-1 pt-[50px] lg:pt-0;
+}
+.settings-mobile-section2 {
+  @apply text-[70px] lg:text-[16px]  pl-10 lg:pt-0 lg:pl-0 leading-[90px] lg:leading-none;
+}
+
+.settings-mobile-section3 {
+  @apply text-[90px] lg:text-[16px]  pl-10 lg:pt-0 lg:pl-0 leading-[90px] lg:leading-none;
 }
 .internal-flex > a {
-  @apply text-xs;
+  @apply text-[55px] lg:text-xs text-blue-700 font-bold;
 }
 
 .title-div {
-  @apply flex gap-4 items-end;  
+  @apply flex gap-4 items-end mt-[53px] mb-[56px] lg:mt-auto lg:mb-auto;
+}
+.leading-default-property {
+  @apply leading-[70px] lg:leading-none text-[70px] lg:text-xl pt-10 lg:pt-2;
+}
+.title-div-style{
+  @apply text-[70px] lg:text-[16px];
 }
 .title-div > a {
-  @apply text-xs;
+  @apply text-[55px] lg:text-xs  text-blue-700;
 }
 .title-div > div {
-  @apply text-xl text-[#666666];
+  @apply text-[70px] lg:text-xl text-[#666666];
 }
 .card {
   @apply bg-[white] rounded flex flex-col gap-[3px];
@@ -116,10 +165,16 @@ icon-category > li {
   @apply flex justify-between gap-[15px];
 }
 .send-free {
-  @apply text-[#00A650] font-[bolder] text-[10px];
+  @apply text-[#00A650] font-[bolder] lg:text-[10px] text-[60px] leading-[80px] lg:leading-none font-bold;
 }
 .price-information {
-  @apply flex gap-1.5 items-center;
+  @apply flex gap-1.5 items-center h-[227px] lg:h-auto;
+}
+.price-information-full {
+  @apply mt-[51px] lg:mt-0;
+}
+.full-style {
+  @apply mt-[51px] lg:mt-auto w-[167px] lg:w-auto ml-[13px] lg:ml-auto;
 }
 .card-header-space {
   @apply mb-[42px];
@@ -128,13 +183,13 @@ icon-category > li {
   @apply mb-2 px-2 py-0 border-b-[#EBEBEB] border-b border-solid;
 }
 .card > div {
-  @apply px-2 py-0;
+  @apply lg:px-2 py-0 px-[10vh];
 }
 .send-free-icon {
   @apply flex gap-1;
 }
 .card-2-header {
-  @apply flex justify-between items-center p-[18px];
+  @apply flex justify-between items-center p-[18px] h-[60vw] lg:h-auto border-r-8;
   background: linear-gradient(90deg, #a90f90 55%, #0c1a51 100%); 
 }
 
@@ -146,10 +201,10 @@ icon-category > li {
   @apply text-[white];
 }
 .card-2-title {
-  @apply text-[21px];
+  @apply lg:text-[21px] text-[70px] leading-[70px] lg:leading-none;
 }
 .card-2-prices {
-  @apply pl-2.5 border-l border-solid;
+  @apply pl-2.5 border-l border-solid w-[500px] lg:w-auto;
 }
 .card-2-body {
   @apply flex flex-col gap-[15px];
@@ -158,25 +213,53 @@ icon-category > li {
   @apply border opacity-60 border-solid border-[#EBEBEB];
 }
 .card-2-body-p {
-  @apply pt-5 pb-0 px-10;
+  @apply lg:pt-5 pb-0 px-10 text-[60px] pt-20 lg:text-xs leading-[70px] lg:leading-none;
+}
+
+.card-3-text-style {
+  @apply lg:text-xs text-[70px] leading-[70px] lg:leading-none
+}
+.card-3-image-style {
+  @apply w-[261px] lg:w-auto
+}
+.card-7-image-style {
+  @apply w-[261px] lg:w-auto
+}
+.img-1-style {
+  @apply w-[1000px] lg:w-auto
+}
+.hidden-default-text {
+  @apply text-[0px] lg:text-[13px];
+}
+.img-2-style {
+  @apply w-[330px] lg:w-auto
+}
+.img-3-style {
+  @apply w-[250px] lg:w-auto
 }
 .card-2-data {
-  @apply grid grid-cols-[repeat(3,1fr)] px-10 py-0;
+  @apply lg:grid lg:grid-cols-[repeat(3,1fr)] px-10 py-0 lg:flex-row flex-col;
 }
 .card-3 {
   @apply flex gap-2.5 items-center px-0 py-[15px];
 }
 .card-2-footer {
-  @apply flex px-10 py-[15px] justify-end; 
+  @apply flex lg:px-10 lg:py-[15px] justify-end;
 }
 .main-button {
-  @apply text-[white] cursor-pointer p-2.5 rounded-[5px] border-[#3483FA] bg-[#3483fa]; 
+  @apply text-[white] cursor-pointer p-2.5 rounded-[5px] border-[#3483FA] bg-[#3483fa] w-[337px] h-[134px] lg:w-auto lg:h-auto text-[55px] lg:text-xs;
+}
+.main-button-section-7 {
+  @apply text-[white] cursor-pointer p-2.5 rounded-[5px] border-[#3483FA] bg-[#3483fa] w-[500px] h-[134px] lg:w-auto lg:h-auto text-[55px] lg:text-xs;
 }
 .card-2-prices-original {
-  @apply line-through text-[13px];
+  @apply line-through lg:text-[13px] text-[65px] pb-10 lg:pb-0;
+}
+.default-price-style {
+  @apply text-[65px] lg:text-[13px]
 }
 .iteration {
-  @apply text-[13px];
+  @apply text-[50px] lg:text-[13px];
 }
 .price-iteration {
   @apply flex gap-[5px] items-end;
@@ -186,10 +269,16 @@ icon-category > li {
   @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
 }
 .card-4-data {
-  @apply flex gap-[17px];
+  @apply flex gap-[17px] flex-col lg:flex-row;
+}
+.size-image-card-4-default {
+  @apply w-[500vw] lg:w-auto;
+}
+.size-second-image-card-4-default {
+  @apply w-[75vw] lg:w-auto lg:text-[10px] text-[70px] pt-[64px] lg:pt-0;
 }
 .info-card-4 {
-  @apply text-lg text-[white];
+  @apply lg:text-lg text-[white] text-[70px] pt-20 lg:pt-0;
 }
 .card-4 {
   @apply relative before:content-[''] before:absolute before:z-[1] before:inset-0;
@@ -201,7 +290,7 @@ icon-category > li {
   background: linear-gradient(0deg, #081330 0%, rgba(8, 19, 48, 0) 100%);
 }
 .f-c-10 {
-  @apply text-[10px];
+  @apply lg:text-[10px] text-[70px];
 }
 .div-section-p-5 {
   @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
@@ -210,46 +299,56 @@ icon-category > li {
   @apply text-[#4B4B4B] bg-[white] flex flex-col gap-4 p-5;
 }
 .info-section-5 > button {
-  @apply w-[100px];
+  @apply lg:w-[100px] w-[500px] pt-10 lg:pt-0;
 }
 .title-section-5 {
-  @apply text-xs;
+  @apply lg:text-xs text-[70px] leading-[90px] lg:leading-none;
 }
 .sub-title-section-5 {
-  @apply font-[bolder] text-xl;
+  @apply font-[bolder] lg:text-xl text-[70px] pt-[64px] lg:pt-0 pb-[70px] lg:pb-0 leading-[90px] lg:leading-none;
 }
 .image-info-section-5 {
-  @apply flex items-center bg-[white] rounded-md;
+  @apply flex items-center bg-white rounded-md;
 }
 .image-info-section-5 > img {
-  @apply w-[205px];
+  @apply lg:w-[205px] w-[1049px];
 }
 .div-card-section-5 {
-  @apply grid gap-2.5 grid-cols-[repeat(2,1fr)];
+  @apply lg:grid gap-2.5 lg:grid-cols-[repeat(2,1fr)] flex-col lg:flex-row;
 }
 .div-section-p-6 {
   @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
 }
 .title-section-6 {
-  @apply font-[bolder] mt-[58px];
+  @apply font-bold mt-[58px];
 }
 .sub-title-section-6 {
-  @apply text-xs text-[#999999] mb-[34px];
+  @apply lg:text-xs text-[#999999] mb-[34px] text-[70px];
 }
 .card-5 {
-  @apply bg-[white] flex flex-col items-center gap-3.5 relative rounded-lg;
+  @apply bg-[white] flex flex-col items-center gap-[14px] relative rounded-[8px];  
 }
+
+
 .img-card-5 {
-  @apply absolute shadow-[2px_2px_2px_1px_rgba(0,0,0,0.1)] rounded-lg top-14;
+  @apply absolute rounded-lg top-14;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
-.img-int-card-5 > img {
-  @apply border rounded-lg border-solid border-[#EEEEEE];
+
+.img-int-card-5 {
+  @apply flex;
 }
+.img-int-card-5>img {
+  @apply border border-gray-200 rounded-[1px];
+}
+
+
 .card-5-all {
-  @apply flex gap-3.5;
+  @apply flex gap-3.5 flex-col lg:flex-row;
 }
+
 .div-section-p-7 {
-  @apply flex flex-col bg-[#EDEDED] gap-[15px] mx-[164px] my-0;
+  @apply hidden lg:flex lg:flex-col lg:bg-[#EDEDED] lg:gap-[15px] lg:mx-[164px] lg:my-0;
 }
 .card-6 {
   @apply bg-[white] flex flex-col rounded-lg;
@@ -273,7 +372,7 @@ icon-category > li {
   @apply text-xs;
 }
 .sub-title-section-7 {
-  @apply font-[bolder] text-xl;
+  @apply font-bold text-xl;
 }
 .title-div-section-7 {
   @apply flex gap-1.5;
@@ -290,6 +389,9 @@ icon-category > li {
 .card-7 {
   @apply flex bg-[white] flex-col items-center gap-2 p-1.5;
 }
+.image-7-style {
+  @apply w-[500px] lg:w-auto;
+}
 .card-7-all {
   @apply grid grid-cols-[repeat(7,1fr)] gap-px;
 }
@@ -297,10 +399,19 @@ icon-category > li {
   @apply text-center;
 }
 .footer-info-title-1 {
-  @apply font-[bold] text-[#4B4B4B];
+  @apply font-bold text-[#4B4B4B];
+}
+.default-font-style {
+  @apply text-[50px] lg:text-xs leading-[70px] lg:leading-none;
 }
 .footer-info-title-2 {
-  @apply text-sm text-[#999999];
+  @apply lg:text-sm text-[#999999] text-[50px];
+}
+.default-image-configuration-footer {
+  @apply w-[150px] lg:w-auto;
+}
+.image-configuration-footer {
+  @apply w-[1500px] lg:w-auto;
 }
 .card-8 {
   @apply flex flex-col items-center text-center gap-2 p-[22px];
@@ -318,14 +429,101 @@ icon-category > li {
   @apply mt-5 mb-[30px] mx-[164px];
 }
 .ul-footer {
-  @apply gap-5;
+  @apply lg:gap-5;
 }
 .ul-footer > li {
-  @apply text-sm;
+  @apply lg:text-sm;
 }
 .texto-info-footer {
-  @apply text-sm text-[#999999];
+  @apply lg:text-sm text-[#999999];
 }
 .waring-footer {
-  @apply flex gap-[30px] pt-[23px];
+  @apply flex lg:gap-[30px] lg:pt-[23px] gap-[198px] pt-[65px];
+}
+
+.link-blue{
+  @apply text-blue-500 hover:text-blue-700 visited:text-blue-700;
+}
+
+#carrusel {
+  @apply overflow-hidden lg:h-[250px] relative h-[1261px];
+}
+#carrusel .left-arrow {
+  @apply absolute z-[1] mt-[-9px] top-[33%];
+}
+#carrusel .right-arrow {
+  @apply absolute z-[1] mt-[-9px] -right-11 top-[33%];
+}
+.carrusel {
+  @apply lg:h-full absolute z-0 h-[663px];
+}
+.carrusel > div {
+  @apply float-left lg:h-full lg:w-[184px] w-[727px] h-[2500px];
+}
+.general-container-section-2-styles {
+  @apply lg:h-auto h-[732px]
+}
+.carrusel img {
+  @apply cursor-pointer;
+}
+.left-arrow > img {
+  @apply lg:w-3/5 w-[250px];
+}
+.right-arrow > img {
+  @apply lg:w-3/5 w-[250px];
+}
+.card-shopping-cart {
+  @apply absolute shadow-[0_4px_8px_0_rgba(0,0,0,0.2),0_6px_20px_0_rgba(0,0,0,0.19)] z-[1] text-[10px] leading-normal rounded-md right-[75px] top-[94px];
+  background: white;
+}
+.card-scroll {
+  @apply w-[300px] max-h-[300px] overflow-hidden overflow-y-scroll;
+}
+
+/* Inicio código para mejorar apariencia de Scroll: https://www.campusmvp.es/recursos/post/como-personalizar-los-estilos-css-de-las-barras-de-scroll.aspx */
+.card-scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.card-scroll::-webkit-scrollbar:vertical {
+  @apply w-2.5;
+}
+.card-scroll::-webkit-scrollbar-button:increment,
+.card-scroll::-webkit-scrollbar-button {
+  @apply hidden;
+}
+.card-scroll::-webkit-scrollbar:horizontal {
+  @apply h-2.5;
+}
+.card-scroll::-webkit-scrollbar-thumb {
+  @apply bg-[#797979] rounded-[20px] border-2 border-solid border-[#f1f2f3];
+}
+.card-scroll::-webkit-scrollbar-track {
+  @apply rounded-[10px];
+}
+
+/* Fin código para mejorar apariencia de Scroll*/
+hr {
+  @apply my-0 border-t-[rgba(0,0,0,0.1)] border-0 border-t border-solid;
+}
+.item-card {
+  @apply items-center flex gap-2 justify-between p-1.5;
+}
+.title-card-shopping-cart {
+  @apply font-bold p-3;
+}
+.title-card-shopping-footer {
+  @apply font-bold p-3;
+}
+.item-card > img {
+  @apply lg:w-[30%] rounded-[50%] border-2 border-solid border-[rgba(0,0,0,0.1)];
+}
+.count-items {
+  @apply absolute text-[white] top-[-3px] font-[bold] text-[13px] left-[13px];
+}
+.position-count-items {
+  @apply relative cursor-pointer ml-2.5;
+}
+
+.icon-delete {
+  @apply cursor-pointer;
 }
