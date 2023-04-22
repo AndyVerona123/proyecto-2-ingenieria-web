@@ -164,9 +164,6 @@ icon-category > li {
 .card-group {
   @apply flex justify-between gap-[15px];
 }
-.alone-img-style {
-  @apply lg:w-[47px]
-}
 .send-free {
   @apply text-[#00A650] font-[bolder] lg:text-[10px] text-[60px] leading-[80px] lg:leading-none font-bold;
 }
@@ -305,10 +302,10 @@ icon-category > li {
   @apply lg:w-[100px] w-[500px] pt-10 lg:pt-0;
 }
 .title-section-5 {
-  @apply lg:text-xs text-[70px];
+  @apply lg:text-xs text-[70px] leading-[90px] lg:leading-none;
 }
 .sub-title-section-5 {
-  @apply font-[bolder] lg:text-xl text-[70px] pt-[64px] lg:pt-0 pb-[70px] lg:pb-0;
+  @apply font-[bolder] lg:text-xl text-[70px] pt-[64px] lg:pt-0 pb-[70px] lg:pb-0 leading-[90px] lg:leading-none;
 }
 .image-info-section-5 {
   @apply flex items-center bg-white rounded-md;
@@ -413,6 +410,9 @@ icon-category > li {
 .default-image-configuration-footer {
   @apply w-[150px] lg:w-auto;
 }
+.image-configuration-footer {
+  @apply w-[1500px] lg:w-auto;
+}
 .card-8 {
   @apply flex flex-col items-center text-center gap-2 p-[22px];
 }
@@ -438,7 +438,7 @@ icon-category > li {
   @apply lg:text-sm text-[#999999];
 }
 .waring-footer {
-  @apply flex gap-[30px] pt-[23px];
+  @apply flex lg:gap-[30px] lg:pt-[23px] gap-[198px] pt-[65px];
 }
 
 .link-blue{
@@ -446,7 +446,7 @@ icon-category > li {
 }
 
 #carrusel {
-  @apply overflow-hidden h-[250px] relative;
+  @apply overflow-hidden lg:h-[250px] relative h-[1261px];
 }
 #carrusel .left-arrow {
   @apply absolute z-[1] mt-[-9px] top-[33%];
@@ -455,19 +455,22 @@ icon-category > li {
   @apply absolute z-[1] mt-[-9px] -right-11 top-[33%];
 }
 .carrusel {
-  @apply h-full absolute z-0;
+  @apply lg:h-full absolute z-0 h-[663px];
 }
 .carrusel > div {
-  @apply float-left h-full w-[184px];
+  @apply float-left lg:h-full lg:w-[184px] w-[727px] h-[2500px];
+}
+.general-container-section-2-styles {
+  @apply lg:h-auto h-[732px]
 }
 .carrusel img {
   @apply cursor-pointer;
 }
 .left-arrow > img {
-  @apply w-3/5;
+  @apply lg:w-3/5 w-[250px];
 }
 .right-arrow > img {
-  @apply w-3/5;
+  @apply lg:w-3/5 w-[250px];
 }
 .card-shopping-cart {
   @apply absolute shadow-[0_4px_8px_0_rgba(0,0,0,0.2),0_6px_20px_0_rgba(0,0,0,0.19)] z-[1] text-[10px] leading-normal rounded-md right-[75px] top-[94px];
@@ -512,7 +515,7 @@ hr {
   @apply font-bold p-3;
 }
 .item-card > img {
-  @apply w-[30%] rounded-[50%] border-2 border-solid border-[rgba(0,0,0,0.1)];
+  @apply lg:w-[30%] rounded-[50%] border-2 border-solid border-[rgba(0,0,0,0.1)];
 }
 .count-items {
   @apply absolute text-[white] top-[-3px] font-[bold] text-[13px] left-[13px];
